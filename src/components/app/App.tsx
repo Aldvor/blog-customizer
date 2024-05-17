@@ -3,7 +3,7 @@ import { defaultArticleState } from 'src/constants/articleProps';
 import { ArticleParamsForm } from '../article-params-form';
 import { Article } from '../article';
 
-import styles from './apps.module.scss';
+import styles from './App.module.scss';
 
 export const App = () => {
 	const [articleState, setArticleState] = useState(defaultArticleState);
