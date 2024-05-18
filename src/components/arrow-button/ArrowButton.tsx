@@ -20,9 +20,9 @@ export const ArrowButton = ({ onClick, isMenuOpen }: OnClick) => {
 			role='button'
 			aria-label='Открыть/Закрыть форму параметров статьи'
 			tabIndex={0}
-			className={`${styles.container} ${
-				isMenuOpen ? styles.container_open : ''
-			}`}
+			className={clsx(styles.container, {
+				[styles.container_open]: isMenuOpen,
+			})}
 			onClick={(e: React.MouseEvent) => {
 				e.stopPropagation();
 				onClickHandler();
