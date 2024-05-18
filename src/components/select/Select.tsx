@@ -23,12 +23,12 @@ type SelectProps = {
 export const Select = (props: SelectProps) => {
 	const { options, placeholder, selected, onChange, onClose, title } = props;
 	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const rootRef = useRef<HTMLDivElement>(null);
+	const selectRef = useRef<HTMLDivElement>(null);
 	const placeholderRef = useRef<HTMLDivElement>(null);
 
 	useOutsideClickClose({
 		isOpen,
-		rootRef,
+		rootRef: selectRef,
 		onClose,
 		onChange: setIsOpen,
 	});
@@ -57,8 +57,7 @@ export const Select = (props: SelectProps) => {
 			)}
 			<div
 				className={styles.selectWrapper}
-				ref={rootRef}
-				data-is-active={isOpen}
+				ref={selectRef}
 				data-testid='selectWrapper'>
 				<img
 					src={arrowDown}

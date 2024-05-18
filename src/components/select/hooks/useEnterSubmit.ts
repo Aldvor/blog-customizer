@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 type UseEnterSubmit = {
 	onChange: React.Dispatch<React.SetStateAction<boolean>>;
-	placeholderRef: React.RefObject<HTMLDivElement>;
+	placeholderRef: React.RefObject<HTMLElement>;
 };
 
 export const useEnterSubmit = ({
